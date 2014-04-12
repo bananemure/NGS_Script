@@ -1,0 +1,76 @@
+#########################################
+#										                    #
+#    SOAPDENOVO2 Assembly script      	#
+#										                    #
+#########################################
+
+##This is a generic script used for assembly of illumina read with Soapdenovo2
+##I will start with the 3 steps methods
+
+##@Input
+#–Proper choice of K
+#–Good error correction go reads to simplify SOAPdenovo’s de Bruijn graph
+#soapdenovo.config file: a config with the parameters needed for the assembly. See docs 
+#•
+##@Execution
+#–Can use different sets of reads for contig construction and for assembly
+#–Simple and straightforward configuration file
+#–Very fast, but high peak memory usage
+#•
+##@Output
+#–asm.contig: initial contigs *before* scaffolding
+#–asm.scafSeq: linear scaffolds
+#–SOAPdenovo.log: Lots of status messages, intermediate files 
+################################################################
+
+##@The main steps for the assembly are:
+#1-PREGRAPH: construct the Bruijn graph
+SOAPdenovo-63mer -p 7 -s soapdenovo.config -K 31 -o asm
+#use R to see the distribution of the kmers
+x <-read.table("asm.kmerFreq",header=F)
+plot(row.names(x),x$V1, xlim=c(1,50), ylim=c(0,300000), col ='dark red',xla = 'Depth', ylab='Frequency',type = ‘h’, lwd=5)
+
+#2-The next command then assembles the contigs
+SOAPdenovo-63mer contig -g asm
+#evaluate some basic stats on your newly assembled contigs:
+perl calcN50.pl asm.contig
+
+#3-Finally, remap the reads to the contigs, and do the scaffolding:
+SOAPdenovo-63mer map -s soapdenovo.config -g asm
+SOAPdenovo-63mer scaff -g asm
+
+#calculate some basic stats for the scaffolds:
+perl calcN50.pl asm.scafSeq
+
+#4-Finally, SOAPdenovo provides an add-on tool that can do gapclosing
+GapCloser -b soapdenovo.config -a asm.scafSeq -o asm.2scafSeq -t 7 -p 31
+
+###################################################################
+#	Evaluation and visualization of the assembly using MUMmer	###	
+###################################################################
+#First we need to make a temporary file that contains the ‘loose parts’ , after GapClosing, from the scaffolds
+java SplitFastaByLetter asm.2scafSeq N >tmp_scf.fasta
+#Then, MUMmer matches the published references seqeuence (reference.fa) against the assembly that you have created yourself
+nucmer --maxmatch -p asm.2scafSeq -l 30 reference.fa tmp_scf.fasta
+  
+#Output files from nucmer need to be filtered and formatted further:
+delta-filter -q asm.2scafSeq.delta > asm.2scafSeq.fdelta
+show-tiling asm.2scafSeq.fdelta>asm.2scafSeq.tiling 
+show-coords -rcl asm.2scafSeq.fdelta>asm.2scafSeq.coords
+
+#visualise your assembly
+mummerplot asm.2scafSeq.fdelta
+#or save the plot
+mummerplot -p asm.dot --png asm.2scafSeq.fdelta 
+#another useful visualization
+mummerplot asm.2scafSeq.tiling
+#or save the figure
+mummerplot -p asm.pip --png asm.2scafSeq.tiling
+
+#use mapview to have a more linear view of the assembly
+mapview -n 1 -p asm31.2scafSeq asm31.2scfSeq.coords
+xfig asm31.2scafSeq_1.fig
+
+
+
+
