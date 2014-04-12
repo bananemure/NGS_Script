@@ -24,7 +24,7 @@ my @cmdTagCleaning= qw/tagcleaner.pl -verbose -64 -matrix exact -out_format 3 -o
 my $information= "
 @----------------------------------------------------------------------@
 |                     NETTOYEUR Stephane Mbatchou 2012                 |
-|		      CENTRE DE RECHERCHE ROBERT-CEDERGREN Montreal            |
+|		      CENTRE DE RECHERCHE ROBERT-CEDERGREN Montreal    |
 @----------------------------------------------------------------------@\n";
 
 
