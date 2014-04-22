@@ -1,4 +1,3 @@
-
 ## NETTOYEUR version1.0 (September 2012)
  
 ### DESCRIPTION:
@@ -59,9 +58,9 @@ see [CONFIGURATION][configuration]
 
 Contacts: stephabiogen@gmail.com  for debug and feedback. 
 
-[install]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/INSTALL.md
-[configuration]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/CONFIGURATION.md
-[synopsis]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/SYNOPSIS.md
+[install]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/INSTALL
+[configuration]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/CONFIGURATION
+[synopsis]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/SYNOPSIS
 [prinseq]: http://prinseq.sourceforge.net
 [cdhit]: http://weizhong-lab.ucsd.edu/cd-hit/
 [tagcleaner]: http://tagcleaner.sourceforge.net
