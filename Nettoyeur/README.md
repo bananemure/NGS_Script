@@ -1,6 +1,8 @@
+
+## NETTOYEUR version1.0 (September 2012)
  
-DESCRIPTION: 
------------
+### DESCRIPTION:
+
 **NETTOYEUR** is a customizable pre-processing software for NGS (Next Generation
 Sequencing) biological data. It makes use of 
 - [prinseq][prinseq] to generate statistics and quality data of sequences; 
