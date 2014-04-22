@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #this bash script will help you download Homo sapiens genome from ncbi.
 # please check first online for the current version of sequences because it changes very fast
 # ftp://ftp.ncbi.nih.gov/genomes/H_sapiens/Assembled_chromosomes/seq/
