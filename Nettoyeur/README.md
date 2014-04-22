@@ -3,11 +3,11 @@ DESCRIPTION:
 -----------
 **NETTOYEUR** is a customizable pre-processing software for NGS (Next Generation
 Sequencing) biological data. It makes use of 
-- prinseq to generate statistics and quality data of sequences; 
-- CD-HIT-454 to remove exact or almost exact duplicates sequences; 
-- tagcleaner to compute and predict the presence of an adaptor at 5’and to remove the
+- [prinseq][prinseq] to generate statistics and quality data of sequences; 
+- [CD-HIT-454][cdhit] to remove exact or almost exact duplicates sequences; 
+- [tagcleaner][tagcleaner] to compute and predict the presence of an adaptor at 5’and to remove the
 adaptor when necessary; 
-- seqtrimnext to clean (eliminates low quality regions, remove 3’
+- [seqtrimnext][seqtrimnext] to clean (eliminates low quality regions, remove 3’
 adaptor, filter sequences for low size, remove undeterminations, and filter sequences with
 contaminants) sequences. It is specially suited for 454/Roche (normal and paired-end)
 and Illumina datasets, although it might be easily adapted to any other situation.
@@ -60,5 +60,8 @@ Contacts: stephabiogen@gmail.com  for debug and feedback.
 [install]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/INSTALL.md
 [configuration]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/CONFIGURATION.md
 [synopsis]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/SYNOPSIS.md
-
+[prinseq]: http://prinseq.sourceforge.net
+[cdhit]: http://weizhong-lab.ucsd.edu/cd-hit/
+[tagcleaner]: http://tagcleaner.sourceforge.net
+[seqtrimnext]: http://rubydoc.info/gems/seqtrimnext
 
