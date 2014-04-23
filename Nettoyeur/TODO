@@ -1,0 +1,6 @@
+List of TODO:
+
+- separate the deduplication from the defaut cleaning and use it as a distinct callable process.
+- use of BWA (with deconseq) instead of blast(slow and not suited for short read) 
+- add repeatmasker as a distinct process to mask repetitions in sequences
+- 
