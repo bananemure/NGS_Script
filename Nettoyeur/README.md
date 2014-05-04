@@ -58,9 +58,9 @@ see [CONFIGURATION][configuration]
 
 Contacts: stephabiogen@gmail.com  for debug and feedback. 
 
-[install]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/INSTALL.md
-[configuration]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/CONFIGURATION.md
-[synopsis]: https://github.com/smbatchou/NGS_Script/edit/master/Nettoyeur/SYNOPSIS.md
+[install]: https://github.com/smbatchou/NGS_Script/blob/master/Nettoyeur/INSTALL.md
+[configuration]: https://github.com/smbatchou/NGS_Script/blob/master/Nettoyeur/CONFIGURATION.md
+[synopsis]: https://github.com/smbatchou/NGS_Script/blob/master/Nettoyeur/SYNOPSIS.md
 [prinseq]: http://prinseq.sourceforge.net
 [cdhit]: http://weizhong-lab.ucsd.edu/cd-hit/
 [tagcleaner]: http://tagcleaner.sourceforge.net
