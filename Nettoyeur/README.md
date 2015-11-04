@@ -28,7 +28,7 @@ Files
   - FASTQ file (as alternative format)
  
    
-### LIST OF PROGRAMS USED BY THE PIPELINE:
+### LIST OF TOOLS USED BY THE PIPELINE:
 
 - seqtrimnext: http://rubydoc.info/gems/seqtrimnext/frames 
 - prinseq-lite.pl : http://prinseq.sourceforge.net/manual.html 
