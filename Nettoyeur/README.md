@@ -1,4 +1,4 @@
-## NETTOYEUR version1.0 (September 2012)
+## NETTOYEUR version1.0
  
 ### DESCRIPTION:
 
